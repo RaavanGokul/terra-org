@@ -34,6 +34,12 @@ pipeline {
             }
         }
 
+        stage('AWS Auth Test') {
+            steps {
+                sh 'aws sts get-caller-identity'
+            }
+        }
+        
         stage('Terraform Init') {
             steps {
                 sh 'terraform init'
