@@ -33,12 +33,6 @@ pipeline {
                 checkout scm
             }
         }
-
-        stage('AWS Auth Test') {
-            steps {
-                sh 'aws sts get-caller-identity'
-            }
-        }
         
         stage('Terraform Init') {
             steps {
