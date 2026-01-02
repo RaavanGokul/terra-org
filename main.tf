@@ -3,6 +3,7 @@ resource "aws_instance" "demo" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "app-terraform-demo"
+    Name = "demo-${var.env}"
+    Env  = var.env
   }
 }
